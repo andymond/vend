@@ -7,6 +7,10 @@ class Machine < ApplicationRecord
     snack_list = snacks.map do |snack|
       snack.price
     end
-    snack_list.sum/snack_list.count
+    if snack_list.count != 0
+      snack_list.sum/snack_list.count
+    else
+      "no snacks here!"
+    end
   end
 end
