@@ -4,5 +4,6 @@
 Find this snack here:
 <% @snack.machines.each do |machine| %>
   <li><%= machine.location %></li>
-  <li><%= machine.avg_price %></li>
+  <li>This machine's avg price is:<%= machine.avg_price %></li>
+  <li>This machine has <%= machine.snacks.count %> different snacks.</li>
 <% end %>
