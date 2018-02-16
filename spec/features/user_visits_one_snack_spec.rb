@@ -19,5 +19,7 @@ describe "user visits snack show page" do
 
     expect(page).to have_content(machine_1.location)
     expect(page).to have_content(machine_2.location)
+    expect(page).to have_content(machine_1.avg_price)
+    expect(page).to have_content(machine_2.avg_price)
   end
 end
