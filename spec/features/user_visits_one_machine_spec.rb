@@ -13,5 +13,6 @@ feature "user visits show page for one vending maching" do
     expect(page).to have_content(snack_1.price)
     expect(page).to have_content(snack_2.name)
     expect(page).to have_content(snack_2.price)
+    expect(page).to have_content(machine.avg_price)
   end
 end
