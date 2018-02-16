@@ -9,4 +9,15 @@ describe "user visits snack show page" do
     expect(page).to have_content(snack.name)
     expect(page).to have_content(snack.price)
   end
+  it "displays snack machine locations" do
+    owner = Owner.create(name: "dude")
+    snack = Snack.create(name: "cheetos", price: 150)
+    machine_1 = snack.machines.create(location: "house", owner_id: owner.id)
+    machine_2 = snack.machines.create(location: "store", owner_id: owner.id)
+
+    visit snack_path(snack)
+
+    expect(page).to have_content(machine_1.location)
+    expect(page).to have_content(machine_2.location)
+  end
 end

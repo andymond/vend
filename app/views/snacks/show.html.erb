@@ -1,2 +1,7 @@
 <%= @snack.name %>
 <%= @snack.price %>
+
+Find this snack here:
+<% @snack.machines.each do |machine| %>
+  <li><%= machine.location %></li>
+<% end %>
